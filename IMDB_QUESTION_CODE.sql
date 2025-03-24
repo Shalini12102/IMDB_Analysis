@@ -16,14 +16,14 @@ WHERE TABLE_SCHEMA = 'imdb';
 
 /*ANSWER 1
 +-------------------------------+
-| TABLE_NAME	 |	TABLE_ROWS	|
+| TABLE_NAME	 |   TABLE_ROWS |
 +-------------------------------+
-|director_mapping|   3867		|
-| genre			 |	14662		|
-| movie			 |	7668		|
-| names			 |	24115		|
-| ratings		 |	7927		|
-| role_mapping	 |	13454		|
+|director_mapping|      3867	|
+| genre		 |	14662	|
+| movie	 	 |	7668	|
+| names		 |	24115	|
+| ratings	 |	7927	|
+| role_mapping	 |	13454	|
 +-------------------------------+
 */
 
@@ -42,17 +42,17 @@ SELECT 'production_company' AS column_name, COUNT(*) AS null_count FROM movie WH
 
 /*ANSWER 2
 +---------------------------+-------------------+
-|     column_name			|	null_count		|
+|     column_name	    |	null_count	|
 +---------------------------+-------------------+
-|	id						|		0			|
-|	title					|		0			|
-|	year 					|		0			|
-|	date_published			|		0			|	
-|	duration				|		0			|			
-|	country 				|		20			|
-|	worlwide_gross_income	|		3724		|
-|	languages				|		194			|
-|	production_company		|		528			|
+| id		    	    |  	  0		|
+| title		    	    |	  0		|
+| year 		    	    |	  0		|
+| date_published    	    |	  0		|	
+| duration	    	    |	  0		|			
+| country 	    	    |	  20		|
+| worlwide_gross_income	    |	  3724		|
+| languages		    |	  194		|
+| production_company	    |	  528		|
 +---------------+-------------------------------+
 */
 	
@@ -64,21 +64,21 @@ SELECT 'production_company' AS column_name, COUNT(*) AS null_count FROM movie WH
 /* Output format for the first part:
 
 +---------------+-------------------+
-| Year			|	number_of_movies|
-+-------------------+----------------
-|	2017		|	2134			|
-|	2018		|		.			|
-|	2019		|		.			|
+| Year		| number_of_movies  |
++-------------------+---------------+
+| 2017		|	2134	    |
+| 2018		|	.	    |
+| 2019		|	.	    |
 +---------------+-------------------+
 
 
 Output format for the second part of the question:
 +---------------+-------------------+
-|	month_num	|	number_of_movies|
-+---------------+----------------
-|	1			|	 134			|
-|	2			|	 231			|
-|	.			|		.			|
+| month_num	| number_of_movies  |
++---------------+-------------------+
+| 1		|	 134	    |
+| 2		|	 231	    |
+| .		|	  .	    |
 +---------------+-------------------+ */
 -- Type your code below:
 
@@ -96,11 +96,11 @@ ORDER BY
 Output format for the first part:
 
 +---------------+-------------------+
-| Year			|	number_of_movies|
-+-------------------+----------------
-|	2017		|	3052			|
-|	2018		|	2944			|
-|	2019		|	2001			|
+| Year		|number_of_movies   |
++---------------+-------------------+
+| 2017		|	3052	    |
+| 2018		|	2944	    |
+| 2019		|	2001	    |
 +---------------+-------------------+
 
 */
@@ -119,20 +119,20 @@ ORDER BY
 /*ANSWER 3.2
 Output format for the second part of the question:
 +---------------+-------------------+
-|	month_num	|	number_of_movies|
+| month_num	|  number_of_movies |
 +---------------+-------------------+
-|	1			|	 804			|
-|	2			|	 640			|
-|	3			|	 824 			|	
-| 	4			|    680			|
-|	5			|    625			|
-|	6			|	 580			|
-|	7			|	 493			|
-|	8			|	 678			|
-|	9			|	 809			|
-|	10			|	 801			|
-|	11			|	 625			|
-|	12			|	 438			|
+| 1		|	 804	    |
+| 2		|	 640	    |
+| 3		|	 824 	    |	
+| 4		|        680	    |
+| 5		|        625	    |
+| 6		|	 580	    |
+| 7		|	 493	    |
+| 8		|	 678	    |
+| 9		|	 809	    |
+| 10		|	 801	    |
+| 11		|	 625	    |
+| 12		|	 438	    |
 +---------------+-------------------+
  */
 
@@ -168,9 +168,9 @@ FROM genre
 GROUP BY genre;
 
 /*ANSWER 5
-+-------------+
++-----------------+
 | genre	   	  |
-+-------------+
++-----------------+
 | Drama		  |
 | Fantasy	  |
 | Thriller	  |
@@ -184,7 +184,7 @@ GROUP BY genre;
 | Crime		  |
 | Mystery	  |
 | Others	  |
-+-------------+
++-----------------+
 */
 
 
@@ -238,11 +238,11 @@ Now, let's find out the possible duration of RSVP Movies’ next project.*/
 /* Output format:
 
 +---------------+-------------------+
-| genre			|	avg_duration	|
-+-------------------+----------------
-|	thriller	|		105			|
-|	.			|		.			|
-|	.			|		.			|
+| genre		| avg_duration	    |
++---------------+-------------------+
+| thriller	|	105	    |
+|    .		|	 .	    |
+|    .		|	 .	    |
 +---------------+-------------------+ */
 -- Type your code below:
 
@@ -259,23 +259,23 @@ ORDER BY
     
     
  /*ANSWER 8
- +---------------+-------------------+
-| genre			|	avg_duration	|
-+-------------------+----------------
-|	Action		|	112.88			|
-|	Romance		|	109.53			|
-|	Crime		|	107.05			|
-|	Drama		|	106.77			|
-|	Fantasy		|	105.14			|
-|	Comedy		|	102.62			|
-|	Adventure	|	101.87			|
-|	Mystery		|	101.80			|	
-|	Thriller	|	101.58			|
-|	Family		|	100.97			|
-|	Others		|	100.16			|
-|	Sci-Fi		|	97.94			|
-|	Horror		|	92.72			|
-+---------------+-------------------+ 
+ +----------------+---------------------+
+| 	genre	  |	avg_duration    |
++-----------------+---------------------+
+|	Action	  |	112.88		|
+|	Romance	  |	109.53		|
+|	Crime	  |	107.05		|
+|	Drama	  |	106.77		|
+|	Fantasy	  |	105.14		|
+|	Comedy	  |	102.62		|
+|	Adventure |	101.87		|
+|	Mystery	  |	101.80		|	
+|	Thriller  |	101.58		|
+|	Family	  |	100.97		|
+|	Others	  |	100.16		|
+|	Sci-Fi	  |	97.94		|
+|	Horror	  |	92.72		|
++-----------------+---------------------+ 
  
  */
 
@@ -289,9 +289,9 @@ Lets find where the movies of genre 'thriller' on the basis of number of movies.
 
 /* Output format:
 +---------------+-------------------+---------------------+
-| genre			|		movie_count	|		genre_rank    |	
+| genre		|   movie_count	    |	genre_rank        |	
 +---------------+-------------------+---------------------+
-|drama			|	2312			|			2		  |
+|drama		|	2312	    |	   2		  |
 +---------------+-------------------+---------------------+*/
 -- Type your code below:
 
@@ -303,23 +303,23 @@ FROM genre
 GROUP BY genre;
 
 /*ANSWER 9
-+---------------+-------------------+---------------+
-| genre			|	movie_count 	|	genre_rank	|
-+---------------+-------------------+---------------+
-| Drama			|		4285		|		1		|	
-| Comedy		| 		2412		|		2		|
-| Thriller		| 		1484		|		3		|
-| Action		| 		1289		|		4		|
-| Horror		| 		1208		|		5		|
-| Romance		|		906			|		6		|
-| Crime			| 		813			|		7		|
-| Adventure 	|		591			|		8		|
-| Mystery		| 		555			|		9		|
-| Sci-Fi		| 		375			|		10		|
-| Fantasy		| 		342			|		11		|
-| Family		| 		302			|		12		|
-| Others		| 		100			|		13		|
-+---------------+-------------------+---------------+
++---------------+-----------------------+---------------+
+| genre		| movie_count 	        | genre_rank	|
++---------------+-----------------------+---------------+
+| Drama		|	4285		|    1		|	
+| Comedy	| 	2412		|    2		|
+| Thriller	| 	1484		|    3		|
+| Action	| 	1289		|    4		|
+| Horror	| 	1208		|    5		|
+| Romance	|	906		|    6		|
+| Crime		| 	813		|    7		|
+| Adventure 	|	591		|    8		|
+| Mystery	| 	555		|    9		|
+| Sci-Fi	| 	375		|    10		|
+| Fantasy	| 	342		|    11		|
+| Family	| 	302		|    12		|
+| Others	| 	100		|    13		|
++---------------+-----------------------+---------------+
 */
 
 /*Thriller movies is in top 3 among all genres in terms of number of movies
@@ -333,11 +333,11 @@ To start with lets get the min and max values of different columns in the table*
 -- Segment 2:
 -- Q10.  Find the minimum and maximum values in  each column of the ratings table except the movie_id column?
 /* Output format:
-+---------------+-------------------+---------------------+----------------------+-----------------+-----------------+
-| min_avg_rating|	max_avg_rating	|	min_total_votes   |	max_total_votes 	 |min_median_rating|min_median_rating|
-+---------------+-------------------+---------------------+----------------------+-----------------+-----------------+
-|		0		|			5		|	       177		  |	   2000	    		 |		0	       |	8			 |
-+---------------+-------------------+---------------------+----------------------+-----------------+-----------------+*/
++----------------+-------------------+---------------------+----------------------+-------------------+-------------------+
+| min_avg_rating | max_avg_rating    |	min_total_votes    |	max_total_votes   | min_median_rating | min_median_rating |
++----------------+-------------------+---------------------+----------------------+-------------------+-------------------+
+|	0	 |	5	     |	       177	   |	   2000	    	  |	  0	      |	      8		  |
++----------------+-------------------+---------------------+----------------------+-------------------+-----------------+*/
 -- Type your code below:
 
 SELECT 
@@ -350,11 +350,11 @@ SELECT
 FROM ratings;
     
 /* ANSWER 10
-+---------------+-------------------+---------------------+----------------------+-----------------+-----------------+
-| min_avg_rating|	max_avg_rating	|	min_total_votes   |	max_total_votes 	 |min_median_rating|min_median_rating|
-+---------------+-------------------+---------------------+----------------------+-----------------+-----------------+
-|		1.0		|		10.0		|	       100		  |	      725138 		 |		1	       |	10			 |
-+---------------+-------------------+---------------------+----------------------+-----------------+-----------------+*/
++----------------+-------------------+---------------------+----------------------+-----------------+-----------------+
+| min_avg_rating |	max_avg_rating	|	min_total_votes   |	max_total_votes 	 |min_median_rating|min_median_rating|
++----------------+-------------------+---------------------+----------------------+-----------------+-----------------+
+|  1.0		 |	10.0		|	       100		  |	      725138 		 |		1	       |	10			 |
++----------------+-------------------+---------------------+----------------------+-----------------+-----------------+*/
 
 
 /* So, the minimum and maximum values in each column of the ratings table are in the expected range. 
