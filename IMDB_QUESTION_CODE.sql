@@ -350,11 +350,11 @@ SELECT
 FROM ratings;
     
 /* ANSWER 10
-+----------------+-------------------+---------------------+----------------------+-----------------+-----------------+
-| min_avg_rating |	max_avg_rating	|	min_total_votes   |	max_total_votes 	 |min_median_rating|min_median_rating|
-+----------------+-------------------+---------------------+----------------------+-----------------+-----------------+
-|  1.0		 |	10.0		|	       100		  |	      725138 		 |		1	       |	10			 |
-+----------------+-------------------+---------------------+----------------------+-----------------+-----------------+*/
++----------------+-------------------+---------------------+----------------------+--------------------+-------------------+
+| min_avg_rating | max_avg_rating    |	min_total_votes    |  max_total_votes 	  |  min_median_rating |  min_median_rating|
++----------------+-------------------+---------------------+----------------------+--------------------+-------------------+
+|  1.0		 |	10.0	     |	      100	   |	  725138 	  |		1      |	10	   |
++----------------+-------------------+---------------------+----------------------+--------------------+-----------------+*/
 
 
 /* So, the minimum and maximum values in each column of the ratings table are in the expected range. 
@@ -364,14 +364,14 @@ Now, let’s find out the top 10 movies based on average rating.*/
 
 -- Q11. Which are the top 10 movies based on average rating?
 /* Output format:
-+---------------+-------------------+---------------------+
-| title			|		avg_rating	|		movie_rank    |
-+---------------+-------------------+---------------------+
-| Fan			|		9.6			|			5	  	  |
-|	.			|		.			|			.		  |
-|	.			|		.			|			.		  |
-|	.			|		.			|			.		  |
-+---------------+-------------------+---------------------+*/
++----------+----------------+----------------+
+| title	   |	avg_rating  |  movie_rank    |
++----------+----------------+----------------+
+| Fan	   |	  9.6	    |	  5 	     |
+| .	   |	   .	    |	  .	     |
+| .	   |	   .	    |	  .	     |
+| .	   |	   .	    |	  .	     |
++----------+----------------+----------------+*/
 -- Type your code below:
 -- Keep in mind that multiple movies can be at the same rank. You only have to find out the top 10 movies (if there are more than one movies at the 10th place, consider them all.)
 
@@ -400,24 +400,24 @@ ORDER BY
 
 /*ANSWER 11
 
-+--------------------------------+-------------------+--------------------+
-| title						  	 |		avg_rating	 |		movie_rank    |
-+--------------------------------+-------------------+--------------------+
-| Kirket						 |		10.0		 |			1	  	  |
-| Love in Kilnerry				 |		10.0		 |			1		  |
-| Gini Helida Kathe				 |		9.8			 |			3		  |
-| Runam		 					 |		9.7			 |			4		  |
-| Android Kunjappan Version 5.25 |		9.6			 |			5		  |
-| Fan							 |		9.6			 |			5		  |
-| Safe							 |		9.5			 |			7		  |
-| The Brighton Miracle			 |		9.5			 |			7		  |
-| Yeh Suhaagraat Impossible		 |		9.5			 |			7		  |
-| Ananthu V/S Nusrath			 |		9.4			 |			10		  |
-| Family of Thakurganj			 |		9.4			 |			10		  |
-| Our Little Haven				 |		9.4			 |			10		  |
-| Shibu							 |		9.4			 |			10		  |
-| Zana							 |		9.4			 |			10		  |
-+--------------------------------+-------------------+--------------------+
++--------------------------------+--------------+---------------+
+| title				 |  avg_rating	|  movie_rank   |
++--------------------------------+--------------+---------------+
+| Kirket			 |	10.0	|	1	|
+| Love in Kilnerry		 |	10.0	|	1	|
+| Gini Helida Kathe		 |	9.8	|	3	|
+| Runam		 		 |	9.7	|	4	|
+| Android Kunjappan Version 5.25 |	9.6	|	5	|
+| Fan				 |	9.6	|	5	|
+| Safe				 |	9.5	|	7	|
+| The Brighton Miracle		 |	9.5	|	7	|
+| Yeh Suhaagraat Impossible	 |	9.5	|	7	|
+| Ananthu V/S Nusrath		 |	9.4	|	10	|
+| Family of Thakurganj		 |	9.4	|	10	|
+| Our Little Haven		 |	9.4	|	10	|
+| Shibu				 |	9.4	|	10	|
+| Zana				 |	9.4	|	10	|
++--------------------------------+--------------+---------------+
 */
 
 
@@ -428,13 +428,13 @@ Summarising the ratings table based on the movie counts by median rating can giv
 -- Q12. Summarise the ratings table based on the movie counts by median ratings.
 /* Output format:
 
-+---------------+-------------------+
-| median_rating	|	movie_count		|
-+-------------------+----------------
-|	1			|		105			|
-|	.			|		.			|
-|	.			|		.			|
-+---------------+-------------------+ */
++---------------+---------------+
+| median_rating	|  movie_count	|
++---------------+---------------+
+|	1	|	105	|
+|	.	|	 .	|
+|	.	|	 .	|
++---------------+---------------+ */
 -- Type your code below:
 -- Order by is good to have
 
@@ -468,9 +468,9 @@ Now, let's find out the production house with which RSVP Movies can partner for 
 -- Q13. Which production house has produced the most number of hit movies (average rating > 8)??
 /* Output format:
 +------------------+-------------------+---------------------+
-|production_company|movie_count	       |	prod_company_rank|
+|production_company|movie_count	       |  prod_company_rank  |
 +------------------+-------------------+---------------------+
-| The Archers	   |		1		   |			1	  	 |
+| The Archers	   |  1		       |      1	    	     |
 +------------------+-------------------+---------------------+*/
 -- Type your code below:
 
@@ -494,14 +494,15 @@ LIMIT 5;
 
 
 /*ANSWER 13
-
-| production_company	 |	movie_count	|	prod_company_rank|
-+------------------------+--------------+--------------------+
-| Dream Warrior Pictures |		3		|		1			 |
-| National Theatre Live	 |		3		|		1			 |
-| Lietuvos Kinostudija	 |		2		|		3			 |
-| Swadharm Entertainment |		2		|		3			 |
-| Panorama Studios		 |		2		|		3			 |
++------------------------+--------------+-----------------------+
+| production_company	 | movie_count	| prod_company_rank     |
++------------------------+--------------+-----------------------+
+| Dream Warrior Pictures |	3	|	1		|
+| National Theatre Live	 |	3	|	1		|
+| Lietuvos Kinostudija	 |	2	|	3		|
+| Swadharm Entertainment |	2	|	3		|
+| Panorama Studios	 |	2	|	3		|
++------------------------+--------------+-----------------------+
 */
 
 -- It's ok if RANK() or DENSE_RANK() is used too
@@ -510,13 +511,13 @@ LIMIT 5;
 -- Q14. How many movies released in each genre during March 2017 in the USA had more than 1,000 votes?
 /* Output format:
 
-+---------------+-------------------+
-| genre			|	movie_count		|
-+-------------------+----------------
-|	thriller	|		105			|
-|	.			|		.			|
-|	.			|		.			|
-+---------------+-------------------+ */
++---------------+----------------+
+| genre		|  movie_count	 |
++---------------+----------------+
+| thriller	|	105	 |
+|  .		|	 .	 |
+|  .		|	 .	 |
++---------------+----------------+ */
 -- Type your code below:
 
 SELECT 
@@ -537,20 +538,22 @@ ORDER BY
     movie_count DESC;
 
 /*ANSWER 14
-genre  		|  movie_count  |
-+-----------+---------------+
-Drama		|	24			|
-Comedy		|	9			|
-Action		|	8			|
-Thriller	|	8			|
-Sci-Fi		|	7			|
-Crime		|	6			|
-Horror		|	6			|
-Mystery		|	4			|
-Romance		|	4			|
-Fantasy		|	3			|
-Adventure	|	3			|
-Family		|	1			|
++---------------+---------------+
+| genre  	|  movie_count  |
++---------------+---------------+
+| Drama		|	24	|
+| Comedy	|	9	|
+| Action	|	8	|
+| Thriller	|	8	|
+| Sci-Fi	|	7	|
+| Crime		|	6	|
+| Horror	|	6	|
+| Mystery	|	4	|
+| Romance	|	4	|
+| Fantasy	|	3	|
+| Adventure	|	3	|
+| Family	|	1	|
++---------------+---------------+
 
 */
 
@@ -559,14 +562,14 @@ Family		|	1			|
 -- Lets try to analyse with a unique problem statement.
 -- Q15. Find movies of each genre that start with the word ‘The’ and which have an average rating > 8?
 /* Output format:
-+---------------+-------------------+---------------------+
-| title			|		avg_rating	|		genre	      |
-+---------------+-------------------+---------------------+
-| Theeran		|		8.3			|		Thriller	  |
-|	.			|		.			|			.		  |
-|	.			|		.			|			.		  |
-|	.			|		.			|			.		  |
-+---------------+-------------------+---------------------+*/
++---------------+---------------+-----------------------+
+| title		| avg_rating	|	genre	        |
++---------------+---------------+-----------------------+
+| Theeran	|   8.3		|	Thriller	|
+|	.	|    .		|	   .		|
+|	.	|    .		|	   .		|
+|	.	|    .		|	   .		|
++---------------+---------------+-----------------------+*/
 -- Type your code below:
 
 SELECT 
@@ -586,25 +589,25 @@ ORDER BY
     g.genre, r.avg_rating DESC;
 
 /*ANSWER 15
-+----------------------------------------+--------------+-----------+
-|title								 	 |	avg_rating	|	genre	|
-+----------------------------------------+--------------+-----------+
-| Theeran Adhigaaram Ondru			 	 |		8.3  	|	Action	|
-| The Irishman						 	 |		8.7		|	Crime	|
-| The Gambinos						 	 |		8.4		|	Crime	|
-| Theeran Adhigaaram Ondru			 	 |		8.3		|	Crime	|
-| The Brighton Miracle				 	 |		9.5		|	Drama	|
-| The Colour of Darkness				 |		9.1		|	Drama	|
-| The Blue Elephant 2					 |		8.8		|	Drama	|
-| The Irishman						 	 |		8.7		|	Drama	|
-| The Mystery of Godliness: The Sequel   |		8.5		|	Drama	|
-| The Gambinos						     |		8.4		|	Drama	|
-| The King and I						 |		8.2		|	Drama	|
-| The Blue Elephant 2					 |		8.8		|	Horror	|
-| The Blue Elephant 2					 |		8.8		|	Mystery	|
-| The King and I						 |		8.2		|	Romance	|
-| Theeran Adhigaaram Ondru				 |		8.3		|	Thriller|
-+----------------------------------------+--------------+-----------+
++----------------------------------------+--------------+---------------+
+|      title				 | avg_rating	|	genre	|
++----------------------------------------+--------------+---------------+
+| Theeran Adhigaaram Ondru		 |	8.3  	|	Action	|
+| The Irishman				 |	8.7	|	Crime	|
+| The Gambinos				 |	8.4	|	Crime	|
+| Theeran Adhigaaram Ondru		 |	8.3	|	Crime	|
+| The Brighton Miracle			 |	9.5	|	Drama	|
+| The Colour of Darkness		 |	9.1	|	Drama	|
+| The Blue Elephant 2			 |	8.8	|	Drama	|
+| The Irishman				 |	8.7	|	Drama	|
+| The Mystery of Godliness: The Sequel   |	8.5	|	Drama	|
+| The Gambinos				 |	8.4	|	Drama	|
+| The King and I			 |	8.2	|	Drama	|
+| The Blue Elephant 2			 |	8.8	|	Horror	|
+| The Blue Elephant 2			 |	8.8	|	Mystery	|
+| The King and I			 |	8.2	|	Romance	|
+| Theeran Adhigaaram Ondru		 |	8.3	|	Thriller|
++----------------------------------------+--------------+---------------+
 */
 
 
@@ -649,7 +652,7 @@ GROUP BY
 +---------+-------------+
 | country | total_votes |
 +---------+-------------+
-| Germany |	106710      |
+| Germany |	106710  |
 | Italy	  | 77965       |
 +---------+-------------+
 */
@@ -664,11 +667,11 @@ Let’s begin by searching for null values in the tables.*/
 -- Segment 3:
 -- Q18. Which columns in the names table have null values??
 /*Hint: You can find null values for individual columns or follow below output format
-+---------------+-------------------+---------------------+----------------------+
-| name_nulls	|	height_nulls	|date_of_birth_nulls  |known_for_movies_nulls|
-+---------------+-------------------+---------------------+----------------------+
-|		0		|			123		|	       1234		  |	   12345	    	 |
-+---------------+-------------------+---------------------+----------------------+*/
++---------------+-------------------+---------------------+-----------------------+
+| name_nulls	|  height_nulls	    | date_of_birth_nulls | known_for_movies_nulls|
++---------------+-------------------+---------------------+-----------------------+
+|    0		|	123	    |	     1234	  |	 12345	    	  |
++---------------+-------------------+---------------------+-----------------------+*/
 -- Type your code below:
 
 SELECT 
@@ -681,11 +684,11 @@ FROM
 
 
 /*ANSWER 18
-+---------------+-------------------+---------------------+----------------------+
-| name_nulls	|	height_nulls	|date_of_birth_nulls  |known_for_movies_nulls|
-+---------------+-------------------+---------------------+----------------------+
-|		0		|		17335		|	      13431		  |	   15226	    	 |
-+---------------+-------------------+---------------------+----------------------+			
++---------------+-------------------+---------------------+-----------------------+
+| name_nulls	| height_nulls	    | date_of_birth_nulls | known_for_movies_nulls|
++---------------+-------------------+---------------------+-----------------------+
+|   0		|  17335	    |	      13431	  |	   15226	  |
++---------------+-------------------+---------------------+-----------------------+			
 */
 
 
@@ -699,11 +702,11 @@ Let’s find out the top three directors in the top three genres who can be hire
 /* Output format:
 
 +---------------+-------------------+
-| director_name	|	movie_count		|
-+---------------+-------------------|
-|James Mangold	|		4			|
-|	.			|		.			|
-|	.			|		.			|
+| director_name	| movie_count	    |
++---------------+-------------------+
+|James Mangold	|	4	    |
+|	.	|	.	    |
+|	.	|	.	    |
 +---------------+-------------------+ */
 -- Type your code below:
 
@@ -729,13 +732,13 @@ LIMIT 3;
 
 /*ANSWER 19
 
-+---------------+-------------------+
-| director_name	|	movie_count		|
-+---------------+-------------------|
-|James Mangold	|		4			|
-|Joe Russo		|		3			|
-|Anthony Russo	|		3			|
-+---------------+-------------------+ 
++---------------+---------------+
+| director_name	| movie_count	|
++---------------+---------------+
+|James Mangold	|	4	|
+|Joe Russo	|	3	|
+|Anthony Russo	|	3	|
++---------------+---------------+ 
 
 */
 
@@ -746,12 +749,12 @@ Now, let’s find out the top two actors.*/
 -- Q20. Who are the top two actors whose movies have a median rating >= 8?
 /* Output format:
 
-+---------------+-------------------+
-| actor_name	|	movie_count		|
-+-------------------+----------------
-|Christain Bale	|		10			|
-|	.			|		.			|
-+---------------+-------------------+ */
++---------------+---------------+
+| actor_name	| movie_count	|
++---------------+---------------+
+|Christain Bale	|  10		|
+|	.	|   .		|
++---------------+---------------+ */
 -- Type your code below:
 
 -- Step 1: Find actors and count their movies with median rating >= 8
@@ -773,12 +776,12 @@ ORDER BY
  LIMIT 2; -- Show only the top 2 actors
  
 /*ANSWER 20
-+---------------+-------------------+
-| actor_name	|	movie_count		|
-+-------------------+----------------
-|Mammootty		|		8			|
-|Mohanlal		|		5			|
-+---------------+-------------------+
++---------------+---------------+
+| actor_name	| movie_count	|
++---------------+---------------+
+|Mammootty	|	8	|
+|Mohanlal	|	5	|
++---------------+---------------+
 */
 
 
@@ -789,13 +792,13 @@ Let’s find out the top three production houses in the world.*/
 
 -- Q21. Which are the top three production houses based on the number of votes received by their movies?
 /* Output format:
-+------------------+--------------------+---------------------+
-|production_company | vote_count		|	prod_comp_rank	  |
-+------------------+--------------------+---------------------+
-| The Archers		|		830			|		1	  		  |
-|	.				|		.			|			.		  |
-|	.				|		.			|			.		  |
-+-------------------+-------------------+---------------------+
++------------------+--------------------+-----------------------+
+|production_company| vote_count	        | prod_comp_rank        |
++------------------+--------------------+-----------------------+
+| The Archers	   |	830		|	1	  	|
+|	.	   |	.		|	.		|
+|	.	   |	.		|	.		|
++------------------+--------------------+-----------------------+
 */
 -- Type your code below:
 
@@ -814,13 +817,13 @@ ORDER BY
 LIMIT 3;  -- Show only the top 3 production houses
 
 /*ANSWER 21
-+------------------+--------------------+---------------------+
-|production_company 	| vote_count	|	prod_comp_rank	  |
-+------------------+--------------------+---------------------+
-| Marvel Studios		|	2656967		|		1	  		  |
-| Twentieth Century Fox	|	2411163		|		2			  |
-| Warner Bros.			|	2396057		|		3			  |
-+-------------------+-------------------+---------------------+
++-----------------------+---------------+---------------------+
+|production_company 	| vote_count	| prod_comp_rank      |
++-----------------------+---------------+---------------------+
+| Marvel Studios	|  2656967	|	1	      |
+| Twentieth Century Fox	|  2411163	|	2	      |
+| Warner Bros.		|  2396057	|	3	      |
++-----------------------+---------------+---------------------+
 */
 
 
@@ -838,14 +841,14 @@ Let’s find who these actors could be.
 -- (Hint: You should use the weighted average based on votes. If the ratings clash, then the total number of votes should act as the tie breaker.)
 
 /* Output format:
-+---------------+-------------------+---------------------+----------------------+-----------------+
-| actor_name	|	total_votes		|	movie_count		  |	actor_avg_rating 	 |actor_rank	   |
-+---------------+-------------------+---------------------+----------------------+-----------------+
-|	Yogi Babu	|			3455	|	       11		  |	   8.42	    		 |		1	       |
-|		.		|			.		|	       .		  |	   .	    		 |		.	       |
-|		.		|			.		|	       .		  |	   .	    		 |		.	       |
-|		.		|			.		|	       .		  |	   .	    		 |		.	       |
-+---------------+-------------------+---------------------+----------------------+-----------------+*/
++---------------+---------------+---------------+------------------+--------------+
+| actor_name	|  total_votes	|   movie_count | actor_avg_rating |  actor_rank  |
++---------------+---------------+---------------+------------------+--------------+
+|  Yogi Babu	|	3455	|	11	|	8.42	   |	1	  |
+|	.	|	.	|	 .	|	  .	   |	.	  |
+|	.	|	.	|	 .	|	  .	   |	.	  |
+|	.	|	.	|	 .	|	  .	   |	.	  |
++---------------+---------------+---------------+------------------+--------------+*/
 -- Type your code below:
 
 -- Step 1: Calculate the total votes, movie count, and average rating for each actor
@@ -1256,53 +1259,53 @@ ORDER BY
     genre, year, movie_rank;  -- Sort the output by genre, year, and movie rank
 
 /*ANSWER 26
-| genre			|	year  |		movie_name				     |worldwide_gross_income| movie_rank	  |
+| genre		|   year  |		movie_name				     |worldwide_gross_income| movie_rank	  |
 +---------------+---------+----------------------------------+----------------------+-----------------+
-Comedy				2017	 The Healer							$ 9979800				 1
-Comedy				2017	 Tim Timmerman, Hope of America		$ 97727					 2
-Comedy				2017	 Il a déjà tes yeux					$ 9755458				 3
-Comedy				2017	 Jumanji: Welcome to the Jungle		$ 962102237				 4
-Comedy				2017	 All Nighter						$ 96162					 5
-Comedy				2018	 La fuitina sbagliata				$ 992070				 1
-Comedy				2018	 Gung-hab							$ 9899017				 2
-Comedy				2018	 Simmba								$ 9865268			  	 3
-Comedy				2018	 Aleksi								$ 9791					 4
-Comedy				2018	 Os Farofeiros						$ 9786399				 5
-Comedy				2019	 Eaten by Lions						$ 99276					 1
-Comedy				2019	 Friend Zone						$ 9894885				 2
-Comedy				2019	 Organize Isler: Sazan Sarmali		$ 9831515				 3
-Comedy				2019	 Benjamin							$ 97521					 4
-Comedy				2019	 Brochevarevarura					$ 9737					 5
-Drama				2017	 Shatamanam Bhavati					INR 530500000			 1
-Drama				2017	 Winner								INR 250000000			 2
-Drama				2017	 Thank You for Your Service			$ 9995692				 3
-Drama				2017	 The Healer							$ 9979800				 4
-Drama				2017	 Shan guang shao nu					$ 9949926				 5
-Drama				2018	 Antony & Cleopatra					$ 998079				 1
-Drama				2018	 Zaba								$ 991					 2
-Drama				2018	 Canary								$ 98665					 3
-Drama				2018	 Simmba								$ 9865268				 4
-Drama				2018	 Une saison en France				$ 98390					 5
-Drama				2019	 Joker								$ 995064593				 1
-Drama				2019	 Nur eine Frau						$ 9884					 2
-Drama				2019	 Running with the Devil				$ 98682					 3
-Drama				2019	 Charlie Says						$ 98240					 4
-Drama				2019	 Transit							$ 982372				 5
-Thriller			2017	 Gi-eok-ui bam						$ 9968972				 1
-Thriller			2017	 V.I.P.								$ 9710283			 	 2
-Thriller			2017	 Fixeur								$ 9669					 3
-Thriller			2017	 Overdrive							$ 9650552				 4
-Thriller			2017	 Den 12. mann						$ 9567121				 5
-Thriller			2018	 The Villain						INR 1300000000			 1
-Thriller			2018	 Shéhérazade						$ 966225				 2
-Thriller			2018	 Truth or Dare						$ 95330493				 3
-Thriller			2018	 La nuit a dévoré le monde			$ 95208					 4
-Thriller			2018	 Replicas							$ 9206925				 5
-Thriller			2019	 Prescience							$ 9956					 1
-Thriller			2019	 Joker								$ 995064593				 2
-Thriller			2019	 Running with the Devil				$ 98682					 3
-Thriller			2019	 The Boat							$ 98559					 4
-Thriller			2019	Division 19							$ 981					 5
+Comedy		    2017	 The Healer							$ 9979800				 1
+Comedy		    2017	 Tim Timmerman, Hope of America		$ 97727					 2
+Comedy		    2017	 Il a déjà tes yeux					$ 9755458				 3
+Comedy		    2017	 Jumanji: Welcome to the Jungle		$ 962102237				 4
+Comedy		    2017	 All Nighter						$ 96162					 5
+Comedy		    2018	 La fuitina sbagliata				$ 992070				 1
+Comedy		    2018	 Gung-hab							$ 9899017				 2
+Comedy		    2018	 Simmba								$ 9865268			  	 3
+Comedy		    2018	 Aleksi								$ 9791					 4
+Comedy		    2018	 Os Farofeiros						$ 9786399				 5
+Comedy		    2019	 Eaten by Lions						$ 99276					 1
+Comedy		    2019	 Friend Zone						$ 9894885				 2
+Comedy		    2019	 Organize Isler: Sazan Sarmali		$ 9831515				 3
+Comedy		    2019	 Benjamin							$ 97521					 4
+Comedy		    2019	 Brochevarevarura					$ 9737					 5
+Drama		    2017	 Shatamanam Bhavati					INR 530500000			 1
+Drama		    2017	 Winner								INR 250000000			 2
+Drama		    2017	 Thank You for Your Service			$ 9995692				 3
+Drama		    2017	 The Healer							$ 9979800				 4
+Drama		    2017	 Shan guang shao nu					$ 9949926				 5
+Drama		    2018	 Antony & Cleopatra					$ 998079				 1
+Drama		    2018	 Zaba								$ 991					 2
+Drama		    2018	 Canary								$ 98665					 3
+Drama		    2018	 Simmba								$ 9865268				 4
+Drama		    2018	 Une saison en France				$ 98390					 5
+Drama		    2019	 Joker								$ 995064593				 1
+Drama		    2019	 Nur eine Frau						$ 9884					 2
+Drama		    2019	 Running with the Devil				$ 98682					 3
+Drama		    2019	 Charlie Says						$ 98240					 4
+Drama		    2019	 Transit							$ 982372				 5
+Thriller	    2017	 Gi-eok-ui bam						$ 9968972				 1
+Thriller	    2017	 V.I.P.								$ 9710283			 	 2
+Thriller	    2017	 Fixeur								$ 9669					 3
+Thriller	    2017	 Overdrive							$ 9650552				 4
+Thriller	    2017	 Den 12. mann						$ 9567121				 5
+Thriller	    2018	 The Villain						INR 1300000000			 1
+Thriller	    2018	 Shéhérazade						$ 966225				 2
+Thriller	    2018	 Truth or Dare						$ 95330493				 3
+Thriller	    2018	 La nuit a dévoré le monde			$ 95208					 4
+Thriller	    2018	 Replicas							$ 9206925				 5
+Thriller	    2019	 Prescience							$ 9956					 1
+Thriller	    2019	 Joker								$ 995064593				 2
+Thriller	    2019	 Running with the Devil				$ 98682					 3
+Thriller	    2019	 The Boat							$ 98559					 4
+Thriller	    2019	Division 19							$ 981					 5
 */
 
 
@@ -1360,10 +1363,10 @@ ORDER BY
 
 /*ANSWER 27
 +-----------------------+---------------+---------------------+
-|production_company 	|movie_count	|	prod_comp_rank	  |
+|production_company 	|movie_count	| prod_comp_rank      |
 +-----------------------+---------------+---------------------+
-| Star Cinema			|		7		|		1	  		  |
-| Twentieth Century Fox	|		4		|		2		      |
+| Star Cinema		|	7	|	1	      |
+| Twentieth Century Fox	|	4	|	2	      |
 +-----------------------+---------------+---------------------+
 */
 
@@ -1440,13 +1443,13 @@ ORDER BY
 LIMIT 3;  -- Only select top 3 actresses
 
 /*ANSWER 28
-+---------------------+-------------+-------------+--------------------+--------------+
-| actress_name	      |	total_votes	| movie_count |	actress_avg_rating | actress_rank |
-+---------------------+-------------+-------------+--------------------+--------------+
-| Parvathy Thiruvothu |	  4974		|	 2		  |		 8.25		   |	 1		  |
-| Amanda Lawrence	  |   656		|	 2		  |		 8.94		   |	 2		  |
-| Denise Gough	      |   656		|	 2		  |		 8.94		   |	 3		  |
-+---------------------+-------------+-------------+--------------------+--------------+
++---------------------+--------------+-------------+--------------------+---------------+
+| actress_name	      |	 total_votes | movie_count | actress_avg_rating | actress_rank  |
++---------------------+--------------+-------------+--------------------+---------------+
+| Parvathy Thiruvothu |	  4974	     |	 2	   |	8.25		|	 1	|
+| Amanda Lawrence     |   656	     |	 2	   |	8.94		|	 2	|
+| Denise Gough	      |   656	     |	 2	   |	8.94		|	 3	|
++---------------------+--------------+-------------+--------------------+---------------+
 */
 
 
@@ -1463,19 +1466,19 @@ Max rating
 total movie durations
 
 Format:
-+---------------+-------------------+---------------------+----------------------+--------------+--------------+------------+------------+----------------+
-| director_id	|	director_name	|	number_of_movies  |	avg_inter_movie_days |	avg_rating	| total_votes  | min_rating	| max_rating | total_duration |
-+---------------+-------------------+---------------------+----------------------+--------------+--------------+------------+------------+----------------+
-|nm1777967		|	A.L. Vijay		|			5		  |	       177			 |	   5.65	    |	1754	   |	3.7		|	6.9		 |		613		  |
-|	.			|		.			|			.		  |	       .			 |	   .	    |	.		   |	.		|	.		 |		.		  |
-|	.			|		.			|			.		  |	       .			 |	   .	    |	.		   |	.		|	.		 |		.		  |
-|	.			|		.			|			.		  |	       .			 |	   .	    |	.		   |	.		|	.		 |		.		  |
-|	.			|		.			|			.		  |	       .			 |	   .	    |	.		   |	.		|	.		 |		.		  |
-|	.			|		.			|			.		  |	       .			 |	   .	    |	.		   |	.		|	.		 |		.		  |
-|	.			|		.			|			.		  |	       .			 |	   .	    |	.		   |	.		|	.		 |		.		  |
-|	.			|		.			|			.		  |	       .			 |	   .	    |	.		   |	.		|	.		 |		.		  |
-|	.			|		.			|			.		  |	       .			 |	   .	    |	.		   |	.		|	.		 |		.		  |
-+---------------+-------------------+---------------------+----------------------+--------------+--------------+------------+------------+----------------+
++---------------+-------------------+---------------------+----------------------+--------------+---------------+---------------+---------------+----------------+
+| director_id	|  director_name    |	number_of_movies  | avg_inter_movie_days | avg_rating	| total_votes   | min_rating	| max_rating    | total_duration |
++---------------+-------------------+---------------------+----------------------+--------------+---------------+---------------+---------------+----------------+
+|nm1777967	|   A.L. Vijay	    |	    5		  |	      177	 |  5.65	|	1754    |	3.7	|	6.9	|	613	 |
+|	.	|	.	    |	    .		  |	       .	 |   .	    	|	.	|	.	|	.	|	.	 |
+|	.	|	.	    |	    .		  |	       .	 |   .	    	|	.	|	.	|	.	|	.	 |
+|	.	|	.	    |	    .		  |	       .	 |   .	    	|	.	|	.	|	.	|	.	 |
+|	.	|	.	    |	    .		  |	       .	 |   .	    	|	.	|	.	|	.	|	.	 |
+|	.	|	.	    |	    .		  |	       .	 |   .	    	|	.	|	.	|	.	|	.	 |
+|	.	|	.	    |	    .		  |	       .	 |   .	    	|	.	|	.	|	.	|	.	 |
+|	.	|	.	    |	    .		  |	       .	 |   .	    	|	.	|	.	|	.	|	.	 |
+|	.	|	.	    |	    .		  |	       .	 |   .	    	|	.	|	.	|	.	|	.	 |
++---------------+-------------------+---------------------+----------------------+--------------+---------------+---------------+---------------+----------------+
 
 --------------------------------------------------------------------------------------------*/
 -- Type you code below:
@@ -1547,17 +1550,17 @@ ORDER BY
 
 
 /*ANSWER 29
-+---------------+-------------------+---------------------+----------------------+--------------+--------------+------------+------------+----------------+
-| director_id	|	director_name	|	number_of_movies  |	avg_inter_movie_days |	avg_rating	| total_votes  | min_rating	| max_rating | total_duration |
-+---------------+-------------------+---------------------+----------------------+--------------+--------------+------------+------------+----------------+
-| nm2096009		| Andrew Jones		|		5			  |			191			 |		3.02	|	1989		|	2.7		|	3.2		 |		432		  |
-| nm1777967		| A.L. Vijay		|		5			  |			177			 |		5.42	|	1754		|	3.7		|	6.9		 |		613		  |
-| nm6356309		| Özgür Bakar		|		4			  |			112			 |		3.75	|	1092		|	3.1		|	4.9		 |		374		  |
-| nm2691863		| Justin Price		|		4			  |			315			 |		4.50	|	5343		|	3.0		|	5.8		 |		346		  |
-| nm0814469		| Sion Sono			|		4			  |			331			 |		6.03	|	2972		|	5.4		|	6.4	 	 |		502		  |
-| nm0831321		| Chris Stokes		|		4			  |			198			 |		4.33	|	3664		|	4.0		|	4.6		 |		352		  |
-| nm0425364		| Jesse V. Johnson	|		4			  |			299			 |		5.45	|	14778		|	4.2		|	6.5		 |		383		  |
-| nm0001752		| Steven Soderbergh	|		4			  |			254			 |		6.48	|	171684		|	6.2		|	7.0		 |		401		  |
-| nm0515005		| Sam Liu			|		4			  |			260			 |		6.23	|	28557		|	5.8		|	6.7		 |		312		  |
-+---------------+-------------------+---------------------+----------------------+--------------+--------------+------------+------------+----------------+
++---------------+-------------------+---------------------+----------------------+--------------+---------------+---------------+------------+--------------------+
+| director_id	|  director_name    |	number_of_movies  | avg_inter_movie_days | avg_rating	| total_votes   | min_rating	| max_rating | total_duration     |
++---------------+-------------------+---------------------+----------------------+--------------+---------------+---------------+------------+--------------------+
+| nm2096009     | Andrew Jones	    |		5	  |	191		 |	3.02	|   1989	|  2.7		|  3.2	     |	432		  |
+| nm1777967	| A.L. Vijay	    |		5	  |	177		 |	5.42	|   1754	|  3.7		|  6.9	     |	613		  |
+| nm6356309	| Özgür Bakar	    |		4	  |	112		 |	3.75	|   1092	|  3.1		|  4.9	     |	374		  |
+| nm2691863	| Justin Price	    |		4	  |	315		 |	4.50	|   5343	|  3.0		|  5.8	     |	346		  |
+| nm0814469	| Sion Sono	    |		4	  |	331		 |	6.03	|   2972	|  5.4		|  6.4	     |	502		  |
+| nm0831321	| Chris Stokes	    |		4	  |	198		 |	4.33	|   3664	|  4.0		|  4.6	     |	352		  |
+| nm0425364	| Jesse V. Johnson  |		4	  |	299		 |	5.45	|   14778	|  4.2		|  6.5	     |	383		  |
+| nm0001752	| Steven Soderbergh |		4	  |	254		 |	6.48	|   171684	|  6.2		|  7.0	     |	401		  |
+| nm0515005	| Sam Liu	    |		4	  |	260		 |	6.23	|   28557	|  5.8		|  6.7	     |	312		  |
++---------------+-------------------+---------------------+----------------------+--------------+---------------+------------+---------------+--------------------+
 */
